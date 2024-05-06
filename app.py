@@ -7,14 +7,14 @@ from updatefilm import update_film
 # create an instance of the Flask class
 app = Flask(__name__)
 
-db_con = sql.connect('filmflaskapp/filmflix.db')
+db_con = sql.connect('filmflix.db')
 db_cursor = db_con.cursor()
 
 #home route
 @app.route('/')
 @app.route('/index')
 def index():
-     with sql.connect('filmflaskapp/filmflix.db') as db_con:
+     with sql.connect('filmflix.db') as db_con:
         db_cursor = db_con.cursor()
         
         # Fetch all films from the database
@@ -39,7 +39,7 @@ def add_film_route():
         film_duration = request.form['duration']
         film_genre = request.form['genre']
 
-        with sql.connect('filmflaskapp/filmflix.db') as db_con:
+        with sql.connect('filmflix.db') as db_con:
             db_cursor = db_con.cursor()
             
             db_cursor.execute('INSERT INTO tblFilms VALUES(NULL,?,?,?,?,?)', 
@@ -65,7 +65,7 @@ def delete_film_route():
     if request.method == 'POST':
         film_id = request.form['id']
         try:
-            conn = sql.connect('filmflaskapp/filmflix.db')
+            conn = sql.connect('filmflix.db')
             cursor = conn.cursor()
             cursor.execute(f"DELETE FROM tblFilms WHERE filmID = ?", (film_id,))
             conn.commit()
@@ -85,7 +85,7 @@ def update_film_route():
 
         if film_id is not None:
             # Check if the film exists in the database
-            with sql.connect('filmflaskapp/filmflix.db') as db_con:
+            with sql.connect('filmflix.db') as db_con:
                 db_cursor = db_con.cursor()
                 db_cursor.execute('SELECT * FROM tblFilms WHERE filmID = ?', (film_id,))
                 film = db_cursor.fetchone()

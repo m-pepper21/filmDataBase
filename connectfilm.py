@@ -1,6 +1,6 @@
 import sqlite3 as sql
 try:
-    with sql.connect("filmflaskapp/filmflix.db") as db_con:
+    with sql.connect("filmflix.db") as db_con:
         db_cursor = db_con.cursor()
 
 except sql.OperationalError as oe:
