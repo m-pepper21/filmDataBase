@@ -1,3 +1,102 @@
 body {
-  background-color: aqua;
+  background-color: rgb(40, 170, 127);
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2 {
+  padding: 20px;
+}
+.filmtable {
+  background-color: bisque;
+  grid-column: 2;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.filmform {
+  grid-column: 1;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filmform label {
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Global styles */
+
+.filmform input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filmform input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filmtable li {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: rgb(196, 149, 93);
+  border-radius: 5px;
+}
+
+.updateform {
+  grid-column: 1;
+  height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.deleteform {
+  grid-column: 1;
+  height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.deleteform input[type="submit"] {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.updateform input[type="submit"] {
+  background-color: rgb(255, 255, 173);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }

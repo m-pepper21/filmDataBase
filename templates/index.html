@@ -1,5 +1,32 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>This is the index page</h1>
+<h1>Welcome to the Films Database</h1>
+<br />
 
+<div class="container">
+  <form class="filmform" action="/addfilm" method="POST">
+    <h2>Fill in the form to add a film</h2>
+    <br />
+    <label for="title">Film Title:</label><br />
+    <input type="text" id="title" name="title" /><br />
+    <label for="release">Release Year:</label><br />
+    <input type="text" id="release" name="release" /><br />
+    <label for="rating">Rating:</label><br />
+    <input type="text" id="rating" name="rating" /><br />
+    <label for="duration">Duration:</label><br />
+    <input type="text" id="duration" name="duration" /><br />
+    <label for="genre">Genre:</label><br />
+    <input type="text" id="genre" name="genre" /><br /><br />
+    <input type="submit" value="Add Film" />
+  </form>
+
+  <div class="filmtable">
+    <h2>List of Films</h2>
+    <ul>
+      {% for film in films %}
+      <li>{{ film }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock content %}

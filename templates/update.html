@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Fill in the form to update a film</h2>
+<form class="updateform" action="/updatefilm" method="POST">
+  <label for="id">Film ID:</label><br />
+  <input
+    type="text"
+    id="id"
+    name="id"
+    {%
+    if
+    film_id
+    %}
+    value="{{ film_id }}"
+    {%
+    endif
+    %}
+  /><br />
+  <input type="submit" value="Check Film" />
+</form>
+
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %} {% if film %}
+<form class="updateform" action="/updatefilm" method="POST">
+  <label for="title">Film Title:</label><br />
+  <input type="text" id="title" name="title" value="{{ film[1] }}" /><br />
+  <label for="release">Year of release:</label><br />
+  <input type="text" id="release" name="release" value="{{ film[2] }}" /><br />
+  <label for="rating">Rating:</label><br />
+  <input type="text" id="rating" name="rating" value="{{ film[3] }}" /><br />
+  <label for="duration">Duration:</label><br />
+  <input
+    type="text"
+    id="duration"
+    name="duration"
+    value="{{ film[4] }}"
+  /><br />
+  <label for="genre">Genre:</label><br />
+  <input type="text" id="genre" name="genre" value="{{ film[5] }}" /><br />
+  <input type="submit" value="Update Film" />
+</form>
+{% endif %} {% endblock %}

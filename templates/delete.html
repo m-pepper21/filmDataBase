@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Fill in the form to delete a film</h2>
+
+<form class="deleteform" action="/deletefilm" method="POST">
+  <label for="idField">Film ID:</label><br />
+  <input type="text" id="idField" name="id" /><br />
+  <input type="submit" value="Delete Film" />
+</form>
+
+{% endblock content %}
